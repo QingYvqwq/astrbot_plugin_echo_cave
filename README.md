@@ -50,8 +50,8 @@ pip install -r requirements.txt
 
 ### 方式二：Git
 
-将本插件目录作为独立仓库放置到 `data/plugins/` 下即可。发布到自己的仓库后，
-可在 `metadata.yaml` 中补充 `repo` 字段。
+将本插件目录作为独立仓库放置到 `data/plugins/` 下即可。仓库地址：
+https://github.com/QingYvqwq/astrbot_plugin_echo_cave
 
 ## 配置
 

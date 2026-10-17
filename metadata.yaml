@@ -4,6 +4,7 @@ desc: 群聊消息存储与回溯插件，支持随机抽取、按 ID 查看、�
 short_desc: 群聊回声洞：存下消息，随时随机回响。
 version: 1.0.0
 author: pynickle
+repo: https://github.com/QingYvqwq/astrbot_plugin_echo_cave
 astrbot_version: ">=4.29,<5"
 support_platforms:
   - aiocqhttp
