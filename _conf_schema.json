@@ -1,0 +1,215 @@
+{
+  "enableChannelWhitelist": {
+    "description": "群聊白名单",
+    "hint": "开启后仅在白名单中的群聊可以使用回声洞功能。",
+    "type": "bool",
+    "default": false
+  },
+  "channelWhitelist": {
+    "description": "群聊白名单 ID 列表",
+    "type": "list",
+    "default": []
+  },
+  "adminMessageProtection": {
+    "description": "管理员消息保护",
+    "hint": "开启后管理员发布的消息只能由管理员删除。",
+    "type": "bool",
+    "default": false
+  },
+  "adminIds": {
+    "description": "管理员 ID 列表",
+    "hint": "仅这些用户可在私聊使用管理命令。",
+    "type": "list",
+    "default": []
+  },
+  "allowContributorDelete": {
+    "description": "允许投稿者删除自己投稿的回声洞",
+    "type": "bool",
+    "default": true
+  },
+  "allowSenderDelete": {
+    "description": "允许原始发送者删除被投稿的回声洞",
+    "type": "bool",
+    "default": true
+  },
+  "deleteMediaWhenDeletingMsg": {
+    "description": "删除回声洞时同时删除关联媒体",
+    "type": "bool",
+    "default": true
+  },
+  "enableSizeLimit": {
+    "description": "启用媒体总量限制",
+    "hint": "按媒体类型统计插件媒体目录的总大小，超过上限后删除最旧的文件。",
+    "type": "bool",
+    "default": false
+  },
+  "maxImageSize": {
+    "description": "图片总量上限 (MB)",
+    "type": "int",
+    "default": 20480,
+    "slider": {"min": 0, "max": 102400, "step": 1}
+  },
+  "maxVideoSize": {
+    "description": "视频总量上限 (MB)",
+    "type": "int",
+    "default": 5120,
+    "slider": {"min": 0, "max": 102400, "step": 1}
+  },
+  "maxFileSize": {
+    "description": "文件总量上限 (MB)",
+    "type": "int",
+    "default": 5120,
+    "slider": {"min": 0, "max": 102400, "step": 1}
+  },
+  "maxRecordSize": {
+    "description": "语音总量上限 (MB)",
+    "type": "int",
+    "default": 5120,
+    "slider": {"min": 0, "max": 102400, "step": 1}
+  },
+  "oversizedMediaCleanupMode": {
+    "description": "媒体超限清理方式",
+    "type": "string",
+    "options": ["keep-cave", "delete-cave"],
+    "default": "keep-cave"
+  },
+  "useBase64ForMedia": {
+    "description": "使用 Base64 发送媒体",
+    "hint": "开启后本地图片/视频/语音以 base64 发送；S3 仍使用预签名链接。",
+    "type": "bool",
+    "default": false
+  },
+  "mediaStorage": {
+    "description": "媒体存储方式",
+    "type": "string",
+    "options": ["local", "s3"],
+    "default": "local"
+  },
+  "s3UploadFailureFallbackMode": {
+    "description": "S3 上传失败回退方式",
+    "type": "string",
+    "options": ["local", "original-link"],
+    "default": "local"
+  },
+  "s3Bucket": {
+    "description": "S3 Bucket",
+    "type": "string",
+    "default": ""
+  },
+  "s3Region": {
+    "description": "S3 Region",
+    "type": "string",
+    "default": ""
+  },
+  "s3Endpoint": {
+    "description": "S3 Endpoint",
+    "hint": "用于兼容 S3 的私有服务，留空使用 AWS 默认端点。",
+    "type": "string",
+    "default": ""
+  },
+  "s3AccessKeyId": {
+    "description": "S3 Access Key ID",
+    "type": "string",
+    "default": ""
+  },
+  "s3SecretAccessKey": {
+    "description": "S3 Secret Access Key",
+    "type": "string",
+    "default": "",
+    "secret": true
+  },
+  "s3ForcePathStyle": {
+    "description": "强制 path-style 访问 S3",
+    "type": "bool",
+    "default": false
+  },
+  "s3PathPrefix": {
+    "description": "S3 路径前缀",
+    "type": "string",
+    "default": ""
+  },
+  "s3PresignExpiresIn": {
+    "description": "S3 预签名 URL 有效期 (秒)",
+    "type": "int",
+    "default": 3600,
+    "slider": {"min": 60, "max": 604800, "step": 60}
+  },
+  "sendAllAsForwardMsg": {
+    "description": "将所有消息以合并转发形式发送",
+    "type": "bool",
+    "default": false
+  },
+  "rankingTopCount": {
+    "description": "排行榜显示人数",
+    "type": "int",
+    "default": 10,
+    "slider": {"min": 1, "max": 100, "step": 1}
+  },
+  "enableForwardUserSelection": {
+    "description": "启用转发消息关联用户选择",
+    "type": "bool",
+    "default": true
+  },
+  "forwardSelectTimeout": {
+    "description": "转发用户选择超时 (秒)",
+    "type": "int",
+    "default": 20,
+    "slider": {"min": 1, "max": 600, "step": 1}
+  },
+  "autoBindSingleForwardUser": {
+    "description": "单用户转发自动绑定",
+    "hint": "转发消息仅识别到一个用户时，是否默认自动绑定该用户。",
+    "type": "bool",
+    "default": false
+  },
+  "forwardSpecialUserHandlingMode": {
+    "description": "特殊用户 1094950020 处理方式",
+    "type": "string",
+    "options": ["ignore", "reject", "confirm"],
+    "default": "ignore"
+  },
+  "enablePokeTrigger": {
+    "description": "拍一拍触发随机抽取",
+    "hint": "仅 OneBot/NapCat 等支持 notice.poke 事件的适配器有效。",
+    "type": "bool",
+    "default": true
+  },
+  "alpha": {
+    "description": "加权随机调整因子 alpha",
+    "type": "float",
+    "default": 0.2,
+    "slider": {"min": 0, "max": 2, "step": 0.05}
+  },
+  "sendFailureHandlingMode": {
+    "description": "发送失败处理方式",
+    "type": "string",
+    "options": ["ignore", "auto-delete", "daily-report"],
+    "default": "ignore"
+  },
+  "sendFailureSummaryAdminId": {
+    "description": "发送失败日报管理员 ID",
+    "type": "string",
+    "default": ""
+  },
+  "sendFailureSummaryTime": {
+    "description": "发送失败日报时间 (HH:mm)",
+    "type": "string",
+    "default": "09:00"
+  },
+  "enableAutoReindex": {
+    "description": "启用每日自动重排 public ID",
+    "type": "bool",
+    "default": false
+  },
+  "autoReindexTime": {
+    "description": "自动重排时间 (HH:mm)",
+    "type": "string",
+    "default": "00:00"
+  },
+  "enableDuplicateDetection": {
+    "description": "启用消息去重",
+    "hint": "同一群聊中重复投稿同一条来源消息时返回已有 ID。",
+    "type": "bool",
+    "default": true
+  }
+}
