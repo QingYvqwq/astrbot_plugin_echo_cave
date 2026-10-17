@@ -217,12 +217,6 @@ cave.admin.restore-reindex C:/path/to/backup.json
 8. **合并转发节点**：AstrBot 的 `Node.to_dict()` 会把节点内图片/语音转为 base64，
    因此大媒体转发可能占用较多内存。普通（非转发）消息不受影响。
 9. **备份恢复**：备份不包含去重指纹；恢复后旧记录仍可正常抽取，但不会参与去重。
-10. 测试使用 AstrBot API mock，不等同于真实 AstrBot/QQ 环境验收。
-
-## 验证情况
-
-当前版本通过 Python 语法检查、Ruff 静态检查与 115 项自动化测试。真实 AstrBot、
-QQ/NapCat、S3 与合并转发等平台能力仍需在实际部署环境中验收。
 
 ## 许可
 
