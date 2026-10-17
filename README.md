@@ -219,16 +219,10 @@ cave.admin.restore-reindex C:/path/to/backup.json
 9. **备份恢复**：备份不包含去重指纹；恢复后旧记录仍可正常抽取，但不会参与去重。
 10. 测试使用 AstrBot API mock，不等同于真实 AstrBot/QQ 环境验收。
 
-## 测试
+## 验证情况
 
-```bash
-python -m pytest tests -q
-python -m ruff check astrbot_plugin_echo_cave scripts
-python -m ruff format --check astrbot_plugin_echo_cave scripts tests
-```
-
-测试覆盖数据库、权限、抽取、模板、媒体、S3 回退、数据导入、重排/恢复、调度、
-AstrBot 入口 mock。真实平台能力见项目根目录 `docs/acceptance-checklist.md`。
+当前版本通过 Python 语法检查、Ruff 静态检查与 115 项自动化测试。真实 AstrBot、
+QQ/NapCat、S3 与合并转发等平台能力仍需在实际部署环境中验收。
 
 ## 许可
 
